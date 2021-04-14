@@ -38,3 +38,18 @@ while count < 5:
 else:
     print("we are don")
     
+def add(a,b):
+    x = a+b
+    return x
+print(add(3,4))
+
+def say_hi(name):
+    greeting = "Hi " + name
+    return greeting
+test = say_hi("Jerry")
+print(test)
+
+sum1 = add(3,2)
+sum2 = add(12,3)
+sum3 = sum1 + sum2
+print(sum3)

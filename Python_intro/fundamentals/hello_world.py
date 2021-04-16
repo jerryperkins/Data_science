@@ -53,3 +53,5 @@ sum1 = add(3,2)
 sum2 = add(12,3)
 sum3 = sum1 + sum2
 print(sum3)
+
+print(5//3)

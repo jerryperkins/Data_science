@@ -55,3 +55,11 @@ sum3 = sum1 + sum2
 print(sum3)
 
 print(5//3)
+
+def be_cheerful(name="", repeat=2):
+    print(f"food morning {name}\n" * repeat)
+be_cheerful()
+be_cheerful("tim")
+be_cheerful("tim", 4)
+be_cheerful(repeat=3,name="Jerry")
+be_cheerful(name="Robbert")

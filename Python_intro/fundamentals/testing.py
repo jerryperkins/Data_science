@@ -81,3 +81,8 @@ print(list(webstersDict.items()))
 dataScienceTools = ['Python', 'R', 'SQL', 'Git']
 for index, tool in enumerate(dataScienceTools):
     print(index, tool)
+
+def testing(arr):
+    for x in range(0,10,1):
+        print(x)
+testing([3,2,5,1,45])

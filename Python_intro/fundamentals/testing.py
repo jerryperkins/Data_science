@@ -86,3 +86,7 @@ def testing(arr):
     for x in range(0,10,1):
         print(x)
 testing([3,2,5,1,45])
+
+random_list = [1,2,4,45,56,7,8]
+
+print(random_list[-3:])

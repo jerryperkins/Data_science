@@ -6,10 +6,12 @@ bike_df = pd.read_excel(filename)
 
 # print(bike_df.head())
 
+print(bike_df.info())
+
 # 1.Select just the data after July 31, 2020.
 july_filer = bike_df['Week of'] > '2020-07-31'
 print(july_filer)
-#
+
 
 # 2.Select just data where the 'Change 2019-2020' column is greater than 100% (greater than 1).
 

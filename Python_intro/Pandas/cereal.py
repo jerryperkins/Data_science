@@ -1,6 +1,6 @@
 import pandas as pd
 
-filename = 'cereal.xlsx'
+filename = 'pandas_data/cereal.xlsx'
 
 cereal = pd.read_excel(filename, header= 1)
 

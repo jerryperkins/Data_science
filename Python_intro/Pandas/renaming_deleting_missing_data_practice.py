@@ -1,6 +1,6 @@
 import pandas as pd
 
-bike_df = pd.read_excel('RailsToTrails_National_Count_Data_week.xlsx')
+bike_df = pd.read_excel('pandas_data/RailsToTrails_National_Count_Data_week.xlsx')
 
 print(bike_df.head())
 

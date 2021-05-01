@@ -1,8 +1,8 @@
 import pandas as pd 
 
-filename = 'bostonHousing1978.xlsx'
-filename2 = 'bostonHousing1978.csv'
-filename3 = 'mortgages.csv'
+filename = 'pandas_data/bostonHousing1978.xlsx'
+filename2 = 'pandas_data/bostonHousing1978.csv'
+filename3 = 'pandas_data/mortgages.csv'
 
 df1 = pd.read_excel(filename)
 df2 = pd.read_csv(filename2)

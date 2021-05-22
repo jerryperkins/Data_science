@@ -1,0 +1,1 @@
+bias is how close your data is to the correct result and variance is how much the data varies from data point to data point. The goal is to have the increase in bias be equal to the reduction in variance. This creates a model with a healthy balance of both

@@ -33,13 +33,15 @@ def subtract(y):
 count_diff_alt = top10['Count'].apply(subtract)
 print(count_diff_alt.mean())
 
-#Grouping
-#1 Select data in the month of August 2005 having flow id=7
-start_date = '08/01/05'
-end_date = '08/31/05'
-august = (df['Date'] >= start_date) & (df['Date'] <= end_date)
-august_filter = df.loc[august & flow_ID_7]
-print(august_filter)
+print(df.info())
 
-#2 Group the data based on date and get the max count per date
-print(august_filter.groupby(['Date']).max())
+# #Grouping
+# #1 Select data in the month of August 2005 having flow id=7
+# start_date = '08/01/05'
+# end_date = '08/31/05'
+# august = (df['Date'] >= start_date) & (df['Date'] <= end_date)
+# august_filter = df.loc[august & flow_ID_7]
+# print(august_filter)
+
+# #2 Group the data based on date and get the max count per date
+# print(august_filter.groupby(['Date']).max())

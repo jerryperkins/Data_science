@@ -5,6 +5,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.decomposition import PCA
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
+from sklearn.pipeline import make_pipeline
 
 
 df = pd.read_csv('data/iris.csv', names = ['sepal length','sepal width','petal length','petal width','target'])
@@ -53,11 +54,11 @@ scaled_df = scaler.fit_transform(X)
 pca = PCA()
 pca.fit(scaled_df)
 
-plt.plot(range(1, 11), pca.explained_variance_ratio_[:10], marker = '.')
-plt.xticks(ticks = range(1, 11))
-plt.xlabel('Principal Component')
-plt.ylabel('Proportion of Explained Variance')
-plt.show()
+# plt.plot(range(1, 11), pca.explained_variance_ratio_[:10], marker = '.')
+# plt.xticks(ticks = range(1, 11))
+# plt.xlabel('Principal Component')
+# plt.ylabel('Proportion of Explained Variance')
+# plt.show()
 
 X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=3)
 scaler = StandardScaler()
@@ -74,3 +75,15 @@ logreg.fit(X_train_pca, y_train)
 
 print('Training accuracy:', logreg.score(X_train_pca, y_train))
 print('Testing accuracy:', logreg.score(X_test_pca, y_test))
+
+#scikti learn pipelines
+
+print(df.head())
+print(X.shape, y.shape)
+X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=3)
+
+pipe = make_pipeline(StandardScaler(), PCA(n_components = 3), LogisticRegression())
+pipe.fit(X_train, y_train)
+
+print('Training accuracy:', pipe.score(X_train, y_train))
+print('Testing accuracy:', pipe.score(X_test, y_test))

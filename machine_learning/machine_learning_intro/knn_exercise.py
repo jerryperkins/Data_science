@@ -67,9 +67,10 @@ print(y)
 df = df.drop("Sex", axis=1)
 X = df.loc[:,:].values
 print(X, X.shape)
-y =  pd.get_dummies(y, columns=['Sex']) #need to get the sex column from words to numberse
+y =  pd.get_dummies(y, columns=['Sex']) # need to get the sex column from words to numbers
 print(y)
 # we need to create separate arrays of values for each type of sex so we can predict them using knnclassifier
+# Talked to Nichole and it turns out for KNeighborsClassifier the target can be categorical and does not require being changed via get_dummies. I should have just set y = df.loc[:, 'Sex'].values 
 F = y.loc[:, 'F'].values
 print(F)
 M = y.loc[:, 'M'].values
@@ -100,6 +101,15 @@ print(predictions_I)# Infant predictions
 print(knn_F.score(X,F)) # same as noted earlier. I added these when looking at your solutions
 print(knn_M.score(X,M))
 print(knn_I.score(X,I))
+
+
+print(predictions_I[0])
+count = 0
+for i in range(0, len(predictions_F), 1):
+    if predictions_F[i] == 0 & predictions_M[i] == 0 & predictions_I[i] == 0:
+        count += 1
+        # print("We failed")
+print(count)
 
 # Question 2: Could you have used linear regression for the classification problem. Linear Regression is not very good at classification so KNN is the better choice here
 
